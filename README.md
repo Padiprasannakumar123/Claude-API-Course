@@ -11,6 +11,15 @@ This repository is organized by course section. Each section lives on its own fe
 | Section | Branch | Topics |
 | ------- | ------ | ------ |
 | 1 | `feat/claude-api-1` | Setup, client, messages, system prompts, temperature, streaming |
+| 2 | `feat/claude-api-2` | Multi-turn chat, stop sequences, assistant prefill, prompt evaluations (model-graded + syntax-graded) |
+
+## Notebooks
+
+| Notebook | What it covers |
+| -------- | -------------- |
+| `accessing-claude-api-1.ipynb` | Client setup, messages, system prompts, temperature, streaming |
+| `accessing-claude-api-2.ipynb` | Stop sequences and assistant prefill |
+| `prompt_evals.ipynb` | Building a prompt-evaluation harness: generate a dataset, run prompts, grade with a model grader and a syntax grader |
 
 ## Getting Started
 
