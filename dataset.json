@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Parse an AWS CloudFormation template and extract all resource logical IDs that have type 'AWS::S3::Bucket'",
+    "format": "python",
+    "solution_criteria": "Function should return a list of logical IDs for S3 bucket resources. Should handle nested structures and return an empty list if no S3 buckets are found."
+  },
+  {
+    "task": "Create a JSON policy document for an IAM role that grants read-only access to a specific S3 bucket named 'my-data-bucket'",
+    "format": "json",
+    "solution_criteria": "Valid JSON policy with correct Action, Resource, and Effect fields. Should include s3:GetObject and s3:ListBucket permissions scoped to the specified bucket only."
+  },
+  {
+    "task": "Create a regular expression to validate AWS EC2 security group IDs in the format 'sg-' followed by 8 or 17 hexadecimal characters",
+    "format": "regex",
+    "solution_criteria": "Regex should match valid security group IDs like 'sg-0123abcd' and 'sg-0123456789abcdef0', but reject invalid formats like 'sg-123' or 'ec2-0123abcd'."
+  }
+]
