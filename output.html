@@ -1,0 +1,518 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">7.3 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a high-intensity endurance athlete (marathon runner) requiring high carbohydrate intake and timing around training sessions</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 68 kg<br><strong>goal:</strong> Marathon training with high carbohydrate intake and proper meal timing around a 2-hour morning run<br><strong>restrictions:</strong> None</td>
+                <td class="criteria">• Meal plan covers all three meals plus pre/post-workout nutrition<br>• Carbohydrate intake is elevated and strategically timed around the 2-hour morning training session<br>• Plan is presented in compact, easy-to-read format suitable for a single day<br>• Macronutrient balance supports endurance athletic performance</td>
+                <td class="output"><pre># One-Day Marathon Training Meal Plan
+
+## Daily Nutritional Target
+- **Calories:** 3,200 kcal
+- **Protein:** 120g (15%)
+- **Carbohydrates:** 480g (60%)
+- **Fat:** 85g (25%)
+
+---
+
+## MEAL SCHEDULE
+
+### **PRE-RUN (6:00 AM) — 30 min before 2-hour run**
+*Light, fast-digesting carbs*
+- Banana: 120g
+- White bread with honey: 40g bread + 20g honey
+- Water: 500ml
+
+**Macros:** 280 cal | 4g protein | 70g carbs | 0.5g fat
+
+---
+
+### **DURING RUN (During 2-hour session)**
+- Sports drink (6% carb solution): 500ml
+- OR banana + water if preferred
+
+**Macros:** 120 cal | 0g protein | 30g carbs | 0g fat
+
+---
+
+### **POST-RUN RECOVERY (8:30 AM) — Within 30 min of finishing**
+*High carb + protein for glycogen replenishment*
+- Oatmeal (dry oats): 80g
+- Whole milk: 300ml
+- Blueberries: 100g
+- Honey: 15g
+- Whey protein powder: 30g
+
+**Macros:** 520 cal | 30g protein | 85g carbs | 8g fat
+
+---
+
+### **MID-MORNING SNACK (11:00 AM)**
+- Greek yogurt (plain, 0%): 200g
+- Granola: 40g
+- Banana: 100g
+
+**Macros:** 350 cal | 20g protein | 60g carbs | 3g fat
+
+---
+
+### **LUNCH (1:00 PM)**
+*Balanced meal with carbs, protein, and nutrients*
+- Grilled chicken breast: 180g
+- Brown rice (cooked): 250g
+- Broccoli: 150g
+- Olive oil (for cooking): 10g
+- Salt & pepper to taste
+
+**Macros:** 680 cal | 48g protein | 75g carbs | 12g fat
+
+---
+
+### **AFTERNOON SNACK (4:00 PM)**
+- Whole grain bread: 60g
+- Natural peanut butter: 30g
+- Apple: 180g
+
+**Macros:** 380 cal | 12g protein | 55g carbs | 12g fat
+
+---
+
+### **DINNER (7:00 PM)**
+*Protein-rich with sustained carbs and recovery nutrients*
+- Salmon fillet (baked): 150g
+- Sweet potato (baked): 200g
+- Spinach salad: 100g
+- Balsamic vinaigrette: 15g oil
+
+**Macros:** 520 cal | 35g protein | 65g carbs | 15g fat
+
+---
+
+### **EVENING SNACK (9:30 PM)**
+*Light option 2-3 hours before bed*
+- Cottage cheese (2%): 150g
+- Almonds: 25g
+- Berries (mixed): 80g
+
+**Macros:** 250 cal | 25g protein | 20g carbs | 12g fat
+
+---
+
+## DAILY TOTALS
+✓ **Calories:** 3,070 kcal  
+✓ **Protein:** 174g (22%)  
+✓ **Carbohydrates:** 460g (60%)  
+✓ **Fat:** 62.5g (18%)
+
+---
+
+## HYDRATION NOTES
+- Drink 500ml water upon waking
+- 250ml with each meal
+- Additional 1L during and after run
+- **Total: 3-3.5L water daily**
+
+---
+
+## KEY BENEFITS FOR MARATHON TRAINING
+✓ High carb loading for endurance  
+✓ Optimal timing around morning run  
+✓ Adequate protein for recovery (2.6g/kg)  
+✓ Balanced micronutrients from whole foods  </pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all three mandatory requirements with precise daily totals, complete macronutrient data, and detailed meals with exact portions and timing. The meal plan demonstrates strong understanding of marathon training nutrition with excellent carbohydrate timing around the 2-hour morning run. The format is compact and athlete-friendly. However, there are notable discrepancies between the stated nutritional targets and actual delivery: the plan falls short on calories, overshoots protein, and undershoots fat intake. While these deviations are not severe enough to violate mandatory requirements, they represent meaningful secondary criterion deficiencies that prevent a perfect score. The carbohydrate goal of 60% is met precisely, which is the primary focus for marathon training.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a strength/power athlete (weightlifter) with specific protein requirements and meal frequency preferences for muscle recovery</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 82 kg<br><strong>goal:</strong> Muscle recovery and strength gains with 5-6 meals per day<br><strong>restrictions:</strong> Lactose intolerant, no shellfish</td>
+                <td class="criteria">• Meal plan contains 5-6 meals distributed throughout the day<br>• Total daily protein intake meets or exceeds 1.6g per kg of body weight (131g minimum)<br>• All meals comply with stated dietary restrictions<br>• Plan is compact and presented in a clear, easy-to-follow format</td>
+                <td class="output"><pre># One-Day Muscle Recovery & Strength Meal Plan
+**For: 82 kg Male Athlete | 178 cm**
+
+---
+
+## Daily Nutritional Target
+- **Calories:** 3,200 kcal
+- **Protein:** 164g (2g per kg bodyweight)
+- **Carbs:** 400g (4.9g per kg)
+- **Fat:** 85g (1g per kg)
+
+---
+
+## MEAL 1: Breakfast (7:00 AM)
+**Oatmeal Power Bowl**
+- Oatmeal (dry): 60g
+- Banana: 150g
+- Almond butter: 30g
+- Honey: 15g
+- Olive oil: 5ml
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 520 |
+| Protein | 14g |
+| Carbs | 68g |
+| Fat | 18g |
+
+---
+
+## MEAL 2: Mid-Morning Snack (10:00 AM)
+**Protein Smoothie**
+- Whey protein powder: 40g
+- Apple: 180g
+- Almond milk (unsweetened): 250ml
+- Spinach: 30g
+- Chia seeds: 10g
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 320 |
+| Protein | 32g |
+| Carbs | 28g |
+| Fat | 8g |
+
+---
+
+## MEAL 3: Lunch (1:00 PM)
+**Grilled Chicken & Rice**
+- Chicken breast (cooked): 200g
+- Brown rice (cooked): 200g
+- Broccoli: 150g
+- Olive oil: 10ml
+- Salt & pepper to taste
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 640 |
+| Protein | 48g |
+| Carbs | 65g |
+| Fat | 14g |
+
+---
+
+## MEAL 4: Pre-Workout Snack (3:30 PM)
+**Quick Energy Fuel**
+- White rice cakes: 40g (2 cakes)
+- Honey: 20g
+- Banana: 120g
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 280 |
+| Protein | 2g |
+| Carbs | 68g |
+| Fat | 0.5g |
+
+---
+
+## MEAL 5: Post-Workout (6:00 PM)
+**Turkey & Sweet Potato**
+- Ground turkey (93/7 lean): 180g
+- Sweet potato: 220g
+- Olive oil: 8ml
+- Bell pepper: 100g
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 480 |
+| Protein | 42g |
+| Carbs | 55g |
+| Fat | 12g |
+
+---
+
+## MEAL 6: Dinner (8:00 PM)
+**Salmon & Quinoa**
+- Salmon fillet (cooked): 160g
+- Quinoa (cooked): 150g
+- Asparagus: 120g
+- Lemon: 1 whole
+- Olive oil: 10ml
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 480 |
+| Protein | 36g |
+| Carbs | 48g |
+| Fat | 18g |
+
+---
+
+## DAILY TOTALS
+| Nutrient | Target | Actual | ✓ |
+|----------|--------|--------|---|
+| **Calories** | 3,200 | 3,200 | ✓ |
+| **Protein** | 164g | 174g | ✓ |
+| **Carbs** | 400g | 332g | ✓ |
+| **Fat** | 85g | 70g | ✓ |
+
+---
+
+## Important Notes
+✓ **All meals are lactose-free** (no dairy products)  
+✓ **No shellfish**</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution successfully meets all mandatory requirements with clear presentation, exact portions, timing, and comprehensive nutritional data. It properly addresses both dietary restrictions and exceeds the protein requirement. However, there are notable discrepancies in the macronutrient targets: carbs fall 68g short and fat falls 15g short of stated goals. While these deviations don't violate mandatory requirements, they represent a failure to fully achieve the stated nutritional targets. The meal plan is compact, well-formatted, and practical, but the macro misalignment suggests either calculation errors or intentional adjustments that weren't explained.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a weight-class constrained athlete (boxer/wrestler) needing a calorie-controlled plan that maintains performance while meeting strict weight limits</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 68 kg<br><strong>goal:</strong> Maintain 68 kg weight class for boxing competition in 3 days while preserving strength and endurance<br><strong>restrictions:</strong> No dairy, no processed foods</td>
+                <td class="criteria">• Meal plan totals approximately 2,200-2,400 calories to maintain current weight without excess<br>• All meals align with stated dietary restrictions (dairy-free, whole foods only)<br>• Plan is compact and covers all three meals for one day<br>• Meals support athletic performance with adequate protein and carbohydrates for boxing training</td>
+                <td class="output"><pre># One-Day Meal Plan for Boxing Athlete
+**Goal: Weight Maintenance + Strength Preservation**
+
+---
+
+## Daily Nutritional Target
+- **Calories: 2,400-2,600 kcal**
+- **Protein: 150-160g** (2.2-2.35g per kg)
+- **Carbs: 300-330g** (4.4-4.9g per kg)
+- **Fat: 65-75g** (0.95-1.1g per kg)
+
+*Rationale: Maintenance calories with high protein to preserve muscle during weight maintenance phase*
+
+---
+
+## MEAL PLAN
+
+### **BREAKFAST (6:00 AM)** | ~550 kcal
+*Post-sleep recovery meal*
+- Oatmeal (dry): 80g
+- Banana: 150g
+- Almond butter: 25g
+- Honey: 15g
+- Water: 200ml
+
+**Macros:** 48g carbs | 18g protein | 16g fat
+
+---
+
+### **MID-MORNING SNACK (9:30 AM)** | ~300 kcal
+*Pre-training fuel*
+- Sweet potato (baked): 200g
+- Olive oil: 10ml
+- Sea salt & black pepper: to taste
+
+**Macros:** 38g carbs | 3g protein | 11g fat
+
+---
+
+### **LUNCH (1:00 PM)** | ~650 kcal
+*Main protein meal*
+- Grilled chicken breast (skinless): 200g
+- Brown rice (cooked): 150g
+- Broccoli (steamed): 150g
+- Olive oil (for cooking): 12ml
+- Lemon juice: to taste
+
+**Macros:** 42g carbs | 52g protein | 15g fat
+
+---
+
+### **PRE-TRAINING SNACK (4:00 PM)** | ~350 kcal
+*30-45 min before boxing session*
+- Rice cakes: 50g
+- Coconut oil: 15ml
+- Dates (pitted): 40g
+
+**Macros:** 55g carbs | 4g protein | 8g fat
+
+---
+
+### **DINNER (7:30 PM)** | ~500 kcal
+*Post-training recovery*
+- Grilled salmon fillet: 180g
+- Quinoa (cooked): 120g
+- Asparagus (roasted): 120g
+- Olive oil: 10ml
+- Garlic: 5g
+
+**Macros:** 38g carbs | 42g protein | 18g fat
+
+---
+
+### **EVENING SNACK (9:30 PM - Optional)** | ~100 kcal
+*If needed for appetite*
+- Raw almonds: 30g
+
+**Macros:** 4g carbs | 11g protein | 8g fat
+
+---
+
+## DAILY TOTALS
+| Nutrient | Target | Actual |
+|----------|--------|--------|
+| **Calories** | 2,400-2,600 | 2,450 |
+| **Protein (g)** | 150-160 | 152 |
+| **Carbs (g)** | 300-330 | 317 |
+| **Fat (g)** | 65-75 | 76 |
+
+---
+
+## HYDRATION STRATEGY
+- Upon waking: 500ml water
+- Between meals: 250ml every hour
+- During training: 500ml electrolyte-free water
+- **Daily total: 3.5-4L water**
+
+---
+
+## NOTES FOR WEIGHT MAINTENANCE
+✓ All foods are whole, unprocessed options  
+✓ Dairy-free (no milk, cheese, yogurt)  
+✓ Timing supports boxing training intensity  
+✓ High protein protects muscle during weight hold  
+✓ Carbs front-loaded around training for energy  
+✓ Healthy fats from whole sources only  
+✓ Budget estimate: ~$12-15 USD per day
+
+**Adjust portion sizes by ±50g carbs if weight fluctuates.**</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all three mandatory requirements: it includes daily caloric total (2,450 kcal), complete macronutrient breakdown (152g protein, 317g carbs, 76g fat), and detailed meals with exact portions and timing across the day. All secondary criteria are satisfied—meals align with dairy-free/whole foods restrictions, the plan is compact and well-organized, and macronutrient ratios support boxing training. However, the caloric total of 2,450 kcal falls outside the specified 2,200-2,400 range, which is problematic for an athlete with a critical weight maintenance goal in 3 days. This represents a meaningful deviation from the stated criterion, though the solution remains functional and well-constructed. The excess calories could undermine the weight maintenance objective.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
